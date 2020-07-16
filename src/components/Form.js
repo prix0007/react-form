@@ -6,6 +6,11 @@ import StepButton from '@material-ui/core/StepButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+//Custom Form Import
+import Step1 from './form_steps/Step1'
+import Step2 from './form_steps/Step2'
+import Step3 from './form_steps/Step3'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -32,11 +37,11 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return 'Step 1: Select campaign settings...';
+      return <Step1 />;
     case 1:
-      return 'Step 2: What is an ad group anyways?';
+      return <Step2 />;
     case 2:
-      return 'Step 3: This is the bit I really care about!';
+      return <Step3 />;
     default:
       return 'Unknown step';
   }
@@ -54,7 +59,7 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
   };
 
   const isStepOptional = (step) => {
-    return step === 1;
+    return step === 3;
   };
 
   const handleSkip = () => {
@@ -170,6 +175,7 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
             <Button onClick={handleReset}>Start Again</Button>
           </div>
         ) : (
+            //Renders code of for current step if all aren't completed
           <div>
             <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
             <div>
