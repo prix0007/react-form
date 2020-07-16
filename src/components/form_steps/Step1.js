@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 const Step1 = () => {
 
     const classes = useStyles();
-
+    
     return (
         <Grid
             container
@@ -40,7 +40,7 @@ const Step1 = () => {
             justify="center"
             alignItems="center"
             >
-            <Grid item xs={5}>
+            <Grid item xs={10} sm={8}>
                 <Paper className={classes.paper}>
                     <form className={classes.form} noValidate autoComplete="off">
                         <TextField 

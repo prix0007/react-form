@@ -42,7 +42,7 @@ const Step2 = () => {
         justify="center"
         alignItems="center"
         >
-            <Grid item xs={5}>
+            <Grid item xs={10} sm={8}>
                 <Paper className={classes.paper}>
                     <FormControl component="fieldset">
                     <FormLabel component="legend"> <Typography variant="h5" color="primary" gutterBottom>Payment Methods</Typography></FormLabel>

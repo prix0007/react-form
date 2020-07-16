@@ -112,16 +112,13 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
     setActiveStep(step);
   };
 
-  const handleComplete = () => {
+  const handleComplete = (activeStep) => {
+
+    // Creates a set adds the active step and updates
     const newCompleted = new Set(completed);
     newCompleted.add(activeStep);
     setCompleted(newCompleted);
 
-    /**
-     * Sigh... it would be much nicer to replace the following if conditional with
-     * `if (!this.allStepsComplete())` however state is not set when we do this,
-     * thus we have to resort to not being very DRY.
-     */
     if (completed.size !== totalSteps() - skippedSteps()) {
       handleNext();
     }
@@ -207,7 +204,7 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
                     Step {activeStep + 1} already completed
                   </Typography>
                 ) : (
-                  <Button variant="contained" color="primary" onClick={handleComplete}>
+                  <Button variant="contained" color="primary" onClick={() => handleComplete(activeStep)}>
                     {completedSteps() === totalSteps() - 1 ? 'Finish' : 'Complete Step'}
                   </Button>
                 ))}

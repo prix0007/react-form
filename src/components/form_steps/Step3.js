@@ -29,10 +29,10 @@ const Step3 = () => {
             justify="center"
             alignItems="center"
             >
-            <Grid item xs={5}>
+            <Grid item xs={10} sm={8}>
                 <Paper className={classes.paper}>
-                    <Typography variant="body1">
-                        Comfirmation from the previous States will be shown Here.
+                    <Typography variant="body1" >
+                        Comfirmation from the previous<br /> States will be shown Here.
                     </Typography>
                 </Paper>
             </Grid>
